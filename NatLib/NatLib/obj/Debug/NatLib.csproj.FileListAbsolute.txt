@@ -1,0 +1,8 @@
+D:\Natolotra\Asa\03-03-2017\GitProject\NatLib\NatLib\NatLib\bin\Debug\NatLib.dll
+D:\Natolotra\Asa\03-03-2017\GitProject\NatLib\NatLib\NatLib\bin\Debug\NatLib.pdb
+D:\Natolotra\Asa\03-03-2017\GitProject\NatLib\NatLib\NatLib\bin\Debug\MySql.Data.dll
+D:\Natolotra\Asa\03-03-2017\GitProject\NatLib\NatLib\NatLib\bin\Debug\MySql.Data.Entity.dll
+D:\Natolotra\Asa\03-03-2017\GitProject\NatLib\NatLib\NatLib\bin\Debug\MySql.Web.dll
+D:\Natolotra\Asa\03-03-2017\GitProject\NatLib\NatLib\NatLib\obj\Debug\NatLib.csprojResolveAssemblyReference.cache
+D:\Natolotra\Asa\03-03-2017\GitProject\NatLib\NatLib\NatLib\obj\Debug\NatLib.dll
+D:\Natolotra\Asa\03-03-2017\GitProject\NatLib\NatLib\NatLib\obj\Debug\NatLib.pdb
