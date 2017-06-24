@@ -5,5 +5,4 @@ D:\Natolotra\Asa\03-03-2017\GitHubProject\NatLib\NatLib\NatLib\bin\Release\MySql
 D:\Natolotra\Asa\03-03-2017\GitHubProject\NatLib\NatLib\NatLib\bin\Release\MySql.Web.dll
 D:\Natolotra\Asa\03-03-2017\GitHubProject\NatLib\NatLib\NatLib\obj\Release\NatLib.dll
 D:\Natolotra\Asa\03-03-2017\GitHubProject\NatLib\NatLib\NatLib\obj\Release\NatLib.pdb
-D:\Natolotra\Asa\03-03-2017\GitHubProject\NatLib\NatLib\NatLib\bin\Release\NatLib.dll.CodeAnalysisLog.xml
-D:\Natolotra\Asa\03-03-2017\GitHubProject\NatLib\NatLib\NatLib\bin\Release\NatLib.dll.lastcodeanalysissucceeded
+D:\Natolotra\Asa\03-03-2017\GitHubProject\NatLib\NatLib\NatLib\obj\Release\NatLib.csprojResolveAssemblyReference.cache

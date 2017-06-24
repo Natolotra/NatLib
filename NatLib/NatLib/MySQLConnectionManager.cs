@@ -11,31 +11,36 @@ namespace NatLib
     public class MySQLConnectionManager
     {
         public static MySQLConnectionManager con_man;
-        private List<MySqlConnection> con_used = new List<MySqlConnection>();
-        public static string str_nb_con = ConfigurationManager.AppSettings["mysql_natlib_nb_max_con"];
-        public static string str_con = ConfigurationManager.ConnectionStrings["mysql_natlib_str_con"].ConnectionString;
+        private List<MySqlConnection> con_used { get; set; }
+        private int int_nb_con { get; set; }
+        private string str_con { get; set; }
 
-        private MySqlConnection _GetConnection(string sc = "") 
+        private MySQLConnectionManager()
+        {
+            this.con_used = new List<MySqlConnection>();
+            try { this.str_con = ConfigurationManager.ConnectionStrings["mysql_natlib_str_con"].ConnectionString; }
+            catch (Exception) { this.str_con = ""; }
+            try { this.int_nb_con = int.Parse(ConfigurationManager.AppSettings["mysql_natlib_nb_max_con"]); }
+            catch (Exception) { int_nb_con = 100; }
+        }
+
+        private MySqlConnection _GetConnection(string sc = "")
         {
             MySqlConnection con = null;
-            int int_nb_con = 100;
 
-            try { int_nb_con = int.Parse(str_nb_con); }
-            catch (Exception) { int_nb_con = 100; }
-
-            lock (con_used)
+            lock (this.con_used)
             {
-                if (con_used.Count < int_nb_con)
+                if (this.con_used.Count < this.int_nb_con)
                 {
                     if (sc != null && sc != "")
                         con = new MySqlConnection(sc);
                     else
-                        con = new MySqlConnection(str_con);
+                        con = new MySqlConnection(this.str_con);
                     try { con.Open(); }
                     catch (Exception) { }
                     if (con.State.Equals(System.Data.ConnectionState.Open))
                     {
-                        con_used.Add(con);
+                        this.con_used.Add(con);
                         return con;
                     }
                 }
@@ -61,9 +66,9 @@ namespace NatLib
 
             try
             {
-                lock (con_used)
+                lock (this.con_used)
                 {
-                    con_used.Remove(con);
+                    this.con_used.Remove(con);
                 }
             }
             catch (Exception) { }
@@ -89,7 +94,7 @@ namespace NatLib
         /// RemoveConnection
         /// </summary>
         /// <param name="con">MySlqConnection</param>
-        public static void RemoveConnection(MySqlConnection con) 
+        public static void RemoveConnection(MySqlConnection con)
         {
             try { if (con_man != null) con_man._RemoveConnection(con); }
             catch (Exception) { }
